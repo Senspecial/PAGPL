@@ -20,8 +20,6 @@ We use seven widely used benchmark datasets: Cora, CoraFull, CiteSeer, PubMed, D
 
 ## Code Structure
 
-main/run.py: The definition of main() function to run the experiments
-
 prompt_graph/blink: The reconstruction of graphs
 
 prompt_graph/privacy_preserving_graph: The generation of privacy graph data
@@ -39,4 +37,12 @@ prompt_graph/prompt: Graph prompt paradigms
 prompt_graph/tasker: GPL tasks
 
 prompt_graph/utils: Other needed functions or classes
+
+## Implementation
+
+Pre-train: !python pre_train.py
+
+Downstream-task: !python downstream_task.py
+
+
 
