@@ -3,6 +3,9 @@
 This is the official implementation of "PAGPL: Privacy-Aware Graph Prompt Learning Scheme via
 Adaptive Perturbation-Estimated Topology Recovery"
 
+![img](./img.png)
+
+
 We will further fix the bugs, update the more robustness tests of GPL scenarios in the future.
 
 We refer to the <ins>ProG</ins> library to build our GPL scenarios **src/** [https://github.com/sheldonresearch/ProG](https://github.com/sheldonresearch/ProG).
