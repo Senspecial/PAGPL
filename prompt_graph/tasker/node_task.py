@@ -67,7 +67,7 @@ class NodeTask(BaseTask):
                         folder = os.path.join(k_shot_folder, str(task_id))
                         if not os.path.exists(folder):
                               os.makedirs(folder)
-                              print(f"📂 创建子文件夹: {folder}")
+                              print(f" 创建子文件夹: {folder}")
 
                               # 先检查 data 是否存在
                               if self.data is None:
