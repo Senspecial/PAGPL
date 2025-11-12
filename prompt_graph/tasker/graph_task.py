@@ -44,23 +44,23 @@ class GraphTask(BaseTask):
 
     def create_few_data_folder_1(self):
         # 创建文件夹并保存数据
-        print("📌 创建 few-shot 数据文件夹，数据集:", self.dataset_name)
-        print(f"📌 Shot 数: {self.shot_num}, Task 数: {self.task_num}")
+        print(" 创建 few-shot 数据文件夹，数据集:", self.dataset_name)
+        print(f" Shot 数: {self.shot_num}, Task 数: {self.task_num}")
 
         for shot in range(1, self.shot_num + 1):  # 遍历 shot_num
             k_shot_folder = f'./Experiment/sample_data/Graph/{self.dataset_name}/{shot}_shot'
             os.makedirs(k_shot_folder, exist_ok=True)
-            print(f"✅ 已创建文件夹: {k_shot_folder}")
+            print(f" 已创建文件夹: {k_shot_folder}")
 
             for task_id in range(1, self.task_num + 1):  # 遍历 task_num
                 folder = os.path.join(k_shot_folder, str(task_id))
                 if not os.path.exists(folder):
                     os.makedirs(folder)
-                    print(f"📂 创建子文件夹: {folder}")
+                    print(f" 创建子文件夹: {folder}")
                     graph_sample_and_save(self.dataset, shot, folder, self.output_dim)
-                    print(f"✅ {shot}-shot {task_id} 组样本已保存！")
+                    print(f" {shot}-shot {task_id} 组样本已保存！")
 
-        print("✅ 数据文件夹创建完成！")
+        print(" 数据文件夹创建完成！")
 
     def load_data(self):
         if self.dataset_name in ['MUTAG', 'ENZYMES', 'COLLAB', 'PROTEINS', 'IMDB-BINARY', 'REDDIT-BINARY', 'COX2', 'BZR', 'PTC_MR', 'ogbg-ppa','DD']:

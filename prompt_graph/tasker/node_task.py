@@ -38,8 +38,8 @@ class NodeTask(BaseTask):
 
       def create_few_data_folder(self):
             # 创建文件夹并保存数据
-            print("📌 创建 few-shot 数据文件夹，数据集:", self.dataset_name)
-            print("📌 Shot 数:", self.shot_num, "Task 数:", self.task_num)
+            print(" 创建 few-shot 数据文件夹，数据集:", self.dataset_name)
+            print(" Shot 数:", self.shot_num, "Task 数:", self.task_num)
             k = self.shot_num  # shot_num 可变
             task_num = self.task_num  # task_num 可变
             for k in range(1,  task_num+1):
@@ -55,13 +55,13 @@ class NodeTask(BaseTask):
 
       def create_few_data_folder_1(self):
             # 创建文件夹并保存数据
-            print("📌 创建 few-shot 数据文件夹，数据集:", self.dataset_name)
-            print(f"📌 Shot 数: {self.shot_num}, Task 数: {self.task_num}")
+            print(" 创建 few-shot 数据文件夹，数据集:", self.dataset_name)
+            print(f" Shot 数: {self.shot_num}, Task 数: {self.task_num}")
 
             for shot in range(1, self.shot_num + 1):  # 遍历 shot_num
                   k_shot_folder = f'./Experiment/sample_data/Node/{self.dataset_name}/{shot}_shot'
                   os.makedirs(k_shot_folder, exist_ok=True)
-                  print(f"✅ 已创建文件夹: {k_shot_folder}")
+                  print(f" 已创建文件夹: {k_shot_folder}")
 
                   for task_id in range(1, self.task_num + 1):  # 遍历 task_num
                         folder = os.path.join(k_shot_folder, str(task_id))
@@ -71,13 +71,13 @@ class NodeTask(BaseTask):
 
                               # 先检查 data 是否存在
                               if self.data is None:
-                                    print("🚨 self.data 为空，无法生成样本！")
+                                    print(" self.data 为空，无法生成样本！")
                               else:
-                                    print(f"📌 生成 {shot}-shot 第 {task_id} 组样本，数据维度: {self.data.x.shape}")
+                                    print(f" 生成 {shot}-shot 第 {task_id} 组样本，数据维度: {self.data.x.shape}")
                                     node_sample_and_save(self.data, shot, folder, self.output_dim)
-                                    print(f"✅ {shot}-shot {task_id} 组样本已保存！")
+                                    print(f" {shot}-shot {task_id} 组样本已保存！")
 
-            print("✅ 数据文件夹创建完成！")
+            print(" 数据文件夹创建完成！")
 
       def load_multigprompt_data(self):
             adj, features, labels = process.load_data(self.dataset_name)
@@ -318,7 +318,7 @@ class NodeTask(BaseTask):
                   self.prompt_epoch = 50
                   self.epochs = int(self.epochs/self.answer_epoch)
             for i in range(1, self.task_num+1):
-                  print(f"📌 运行任务 i={i}, shot_num={self.shot_num}, task_num={self.task_num}")
+                  print(f" 运行任务 i={i}, shot_num={self.shot_num}, task_num={self.task_num}")
                   self.initialize_gnn()
                   self.answering =  torch.nn.Sequential(torch.nn.Linear(self.hid_dim, self.output_dim),
                                                 torch.nn.Softmax(dim=1)).to(self.device) 
