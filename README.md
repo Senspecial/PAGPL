@@ -19,7 +19,7 @@ We refer to the <ins>ProG</ins> library to build our GPL scenarios **src/** [htt
 
 ## Dataset
 
-We use seven widely used benchmark datasets: Cora, CiteSeer, PubMed, DD, ENZYMES
+We use five widely used benchmark datasets: Cora, CiteSeer, PubMed, DD, ENZYMES
 
 ## Code Structure
 
